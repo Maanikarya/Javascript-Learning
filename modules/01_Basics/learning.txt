@@ -1,0 +1,36 @@
+# Rich History: Brandon Eik - Netscape(browser) Company - He created Mocha language. 
+# He converted the Mocha language as Java-script because Java was already famouns. People think it is Java advance version. 
+
+# It is the scripting language. 
+# HTML is markup language. JS is scripting language. 
+
+Ecma script - ES-5 version problems exist. 
+Update- ES6 in the ES6 version. 
+var - ES5
+let & const - ES6 
+
+Keyword is special word with any meaning. 
+#hoisting kya hota hai yaar ??
+
+Hoisting is use the varibale or function before declearation.
+
+eg: 
+
+console.log(number);
+var number = 20;
+
+getNumber();
+
+function getNumber(){
+    console.log(5);
+}
+
+
+The temporal dead zone:
+
+console.log(number);
+let number = 20
+
+decleartion and initalization (initialze 1st time)
+# use let or const because of block scope and funcitonal scope.
+"use strict" // treat all JS code as newer version
