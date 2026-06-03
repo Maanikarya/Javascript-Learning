@@ -21,3 +21,23 @@ console.log(isLoggedIn)
 isLoggedIn = Boolean(isLoggedIn)
 console.log(typeof isLoggedIn)
 console.log(isLoggedIn)
+
+
+let value = 1
+let negValue = -value
+console.log(typeof negValue)
+console.log(negValue)
+
+// console.log(2+2)
+// console.log(2-2)
+// console.log(2*2)
+// console.log(2**4)
+// console.log(2/2)
+// console.log(2%3)
+
+let num1 = 3
+let num2 = num1++
+console.log(num1, num2)
+let a = 3
+let b = ++a
+console.log(a, b)

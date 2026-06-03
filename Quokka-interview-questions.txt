@@ -1,0 +1,143 @@
+Question#1: What is the output of the below program?
+
+let arr = [1, 2, 3, 4, 5, -6, 7];
+arr.length = 0;
+console.log(arr);
+
+Question#2: What is the o/p of the below program?
+
+function hello() {
+    console.log("1");
+    setTimeout(() => {
+        console.log("2");
+    })
+  console.log("3");
+}
+hello();
+
+
+Question#3: What is the o/p of the below program?
+console.log(30 > 20 > 10)
+
+Question#4: What is the o/p of the below program?
+
+for(let i = 0; i < 10; i++){
+    setTimeout(function(){
+      console.log("value is " + i);
+    })
+}
+ 
+
+Question#5: What is the o/p of the below program?
+
+for(var i = 0; i < 10; i++){
+    setTimeout(function(){
+      console.log("value is " + i);
+    })
+}
+
+
+Question#6: What is the o/p of the below program?
+
+console.log(0 && 1)
+console.log(1 && 2)
+console.log(0 || 1)
+console.log(1 || 2)
+console.log(0 ?? 10)
+console.log({} == {})
+console.log({} === {})
+
+Question#7: What is the o/p of the below program?
+
+for (let i = 0; i <= 10; i++);
+console.log(i);
+
+
+Question#8: What is the o/p of the below program?
+
+const obj = {
+    name: 'Maanik',
+    getName: function() {
+        console.log(this);
+    }
+}
+obj.getName();
+
+Question#9: Write a program for the below requirements?
+
+Input = [1,2,3,4,5,[6,7,8,[9],[10,[11],12]]]
+Output = [1,2,3,4,5,6,7,8,9,10,11,12]
+
+
+Question#10: What is the o/p of the below program?
+
+function makeFunc(name) {
+  const prefix = 'Hello';
+  function displayName() {
+    console.log(prefix + ' ' + name);
+  }
+  return displayName;
+}
+ 
+const myFunc = makeFunc('Maanik');
+myFunc('Arya');
+
+
+Question#11: What is the o/p of the below program?
+
+const myPromise = new Promise((resolve, reject) => {
+
+  setTimeout(() => {
+
+    resolve("foo");
+
+  }, 300);
+
+});
+ 
+myPromise
+  .catch(r => {
+    console.log(r)
+  })
+
+
+Question#12: What is the o/p of the below program?
+
+
+const myPromise = new Promise((resolve, reject) => {
+
+  setTimeout(() => {
+
+    resolve("foo");
+
+  }, 300);
+
+});
+ 
+myPromise
+
+  .then(r => {
+
+    console.log('first', r);
+
+  })
+
+  .catch(r => {
+
+    console.log(r)
+
+  })
+
+  .then(r => {
+
+    console.log('second', r);
+
+  })
+
+
+Question#13: Diff b/t Spread and Rest operator.
+Question#14: What is closures? Give a real world example. 
+Question#15: Explain promises in JS. Give a real world example. 
+Question#16: What is callback functions in JS. Give a realworld example. 
+Question#17: What is callback hell in JS. Give a real world example. 
+Question#18: Diff b/t setInterval and setTimeout in JS
