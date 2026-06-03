@@ -141,3 +141,4 @@ Question#15: Explain promises in JS. Give a real world example.
 Question#16: What is callback functions in JS. Give a realworld example. 
 Question#17: What is callback hell in JS. Give a real world example. 
 Question#18: Diff b/t setInterval and setTimeout in JS
+Question#19: What is the use of arrow function and its diffrence.
