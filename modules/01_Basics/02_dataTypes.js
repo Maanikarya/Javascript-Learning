@@ -18,12 +18,6 @@ console.log(state)
 // undefined => 
 // symbol => unique
 
-
-// object 
-
-console.log(typeof(undefined))
-
-
 // null is an object type but undefined is undefned 
 
 
