@@ -1,0 +1,89 @@
+cv-by-jd.com
+LoopCV
+
+
+Video 1 : Viabhav Sisinty
+4 stages:
+#1 Step 1:
+Perplexity - comet browser
+Give prompt while open the linkedin. The it give youthe o/p.
+#2 Step 2: (ATS)
+Gemini (thinking model):
+Canvas - Add JD 
+Paste profile summary. Customize resume using latex. 
+-Format to fit on a single page. ATS friendly.
+#3 step3 - Write cover letter to people. 
+#4 Step 4 - Notebook LM: for interview preprations
+
+
+
+Video 2 : Viabhav Sisinty with Raj Shamani (Need to watch the full Podcast)
+Indeed with claude
+1. Claude connector - indeed
+2. write the prompt using coment and find the job in linkedin and other platforms. 
+3. generate coverletter , cold emails
+4. Perplexity computer
+
+
+Video 3: manish Career talk
+1. Claude Extesion
+2. Claude profile - Cladue in Chrome - allow extension (Need upgrade plan)
+3. Write the prompt at naukri. 
+4. Add additional condition in the prompt: last 25 hours. 
+{Claude can apply also}
+
+
+Video 4:  Career Talk
+1. Linkedin and Resume aligned
+2. Open to work on linkedin with recuiretor only mode on. 
+3. Use claude for search the Jobs.
+4. Daily breifing and Daily summary of their Job Inndustry using the claude
+5. Preparing the AI agent for Interviews. 
+6. Built hosted Enterpise Grad RAG application on Hugging-face.
+
+
+Video 5: WsCubeTalk:
+1. Create profile in Indeed.
+2. Create Profile and update the CV.
+3. Claude -> connector Add Indeed.
+4. Write the prompt: Give me list of the companies based on Noida,Delhi,.... {use indeed connector} based on my resume.
+
+
+Video 6: Chandu's World
+1. Download Claude Desktop application
+2. Connectors- Add connector - Appify MCP server. 
+3. Go to Apify and genertae token that share with claude. 
+4. Add the token in the Claude. 
+5. Attach Resume - prompt : My resume is attached. Go to Linkeding uisng Apify adn give me 20 jobs that has posted n the past 24 hours for the role of MERN developer In NOida in an excel sheet. 
+
+
+Video 7: Chandu's World -  Claude AI for Job Application: LinkedIn Profile Optimization (PDF Method)
+
+Video 8: 5 New AI Job-Seeker Tools You Won't Believe Exist! (tech With Lucy)
+Final Round
+Teal - Centralized apps in 1 place. 
+Hubspot
+cleve.ai
+
+Video 9: 
+
+
+#TODO:
+Update Naukri profile
+Update foundit profile 
+Update Indeed profile.
+
+Video 9: (how to learn ANYTHING faster than anyone) by GIGL
+1. Accelater Cycle time - jaldi-2 fail ho aur apne failure se sikho. 
+2. Learn from experts
+3. Manical Sense of Urgency - Extreme sense of Urgency (Joh bhi karna hai voh abhi karna hai)
+4. Simplyfy Everything - 80-20 principle
+5. Question Every requirement- har cheej ko galat mano jab tak prove na kiya jaye. 
+
+
+Video 10: 7 AI Job Search Hacks You need to know...
+1. Find the ATS free : jobscan.co
+2. Missing keyword : Jobalytics - Resume Keyword Analyser
+3. Tailure resume accrding to JD -  
+4. Word Ware
+5. 
