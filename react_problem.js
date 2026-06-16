@@ -1,5 +1,4 @@
 function QuizApp() {
-  // do not modify the questions or answers below
   const questions = [
     {
       question: 'What is the capital of France?',
@@ -61,24 +60,20 @@ function QuizApp() {
           <div key={index}>
             <input
               type="radio"
-              id={`option${index + 1}`}
+              id={`Option${index + 1}`}  {/* ✅ Capital O fixed */}
               name="answer"
               value={option}
               checked={selectedOption === option}
               onChange={(e) => setSelectedOption(e.target.value)}
             />
-            <label htmlFor={`option${index + 1}`}>
+            <label htmlFor={`Option${index + 1}`}>  {/* ✅ Matches fixed ID */}
               {option}
             </label>
           </div>
         ))}
       </div>
 
-      <button
-        style={style.button}
-        id="submitBtn"
-        onClick={handleSubmit}
-      >
+      <button style={style.button} id="submitBtn" onClick={handleSubmit}>
         Submit
       </button>
 

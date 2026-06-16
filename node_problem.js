@@ -6,66 +6,56 @@ https.get('https://coderbyte.com/api/challenges/json/json-cleaning', (resp) => {
   resp.on('data', chunk => data += chunk);
 
   resp.on('end', () => {
-    let jsonData = JSON.parse(data);
+    let jsonData;
+    try {
+      jsonData = JSON.parse(data);
+    } catch (e) {
+      console.log("Failed to parse JSON:", e.message);
+      return;
+    }
+
     let removedCount = 0;
 
-    function clean(obj) {
+    const isInvalid = (val) => val === "" || val === "N/A" || val === "-";
 
-      // Handle Array
+    function clean(obj) {
       if (Array.isArray(obj)) {
-        let newArr = obj
+        return obj
           .filter(item => {
-            const invalid = item === "" || item === "N/A" || item === "-";
-            if (invalid) removedCount++;
-            return !invalid;
+            if (isInvalid(item)) { removedCount++; return false; }
+            return true;
           })
           .map(item => clean(item));
-
-        return newArr;
       }
 
-      // Handle Object
-      else if (typeof obj === 'object' && obj !== null) {
+      if (typeof obj === 'object' && obj !== null) {
         let newObj = {};
-
         for (let key in obj) {
-          let value = obj[key];
-
-          if (value === "" || value === "N/A" || value === "-") {
+          const value = obj[key];
+          if (isInvalid(value)) {
             removedCount++;
-          } else {
-            const cleanedValue = clean(value);
-
-            // ✅ REMOVE empty array/object ALSO
-            if (
-              cleanedValue !== null &&
-              !(Array.isArray(cleanedValue) && cleanedValue.length === 0) &&
-              !(typeof cleanedValue === 'object' &&
-                !Array.isArray(cleanedValue) &&
-                Object.keys(cleanedValue).length === 0)
-            ) {
-              newObj[key] = cleanedValue;
-            } else {
-              removedCount++;
-            }
+            continue;
           }
-        }
+          const cleaned = clean(value);
+          const isEmpty =
+            (Array.isArray(cleaned) && cleaned.length === 0) ||
+            (typeof cleaned === 'object' && !Array.isArray(cleaned) &&
+              cleaned !== null && Object.keys(cleaned).length === 0);
 
+          if (!isEmpty) newObj[key] = cleaned;
+        }
         return newObj;
       }
 
-      // Primitive
       return obj;
     }
 
-    let result = clean(jsonData);
-
-    // ✅ FINAL KEY (IMPORTANT)
+    const result = clean(jsonData);
     result.items_removed = removedCount;
-
     console.log(JSON.stringify(result));
   });
 
-}).on("error", (err) => {
-  console.log("Error: " + err.message);
+  // ❌ REMOVED: resp.resume() and resp.statusCode log
+  // These were interfering with the data stream
+
 });
