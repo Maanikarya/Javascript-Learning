@@ -1,3 +1,29 @@
+import React, { useState } from 'react';
+import { createRoot } from 'react-dom/client';
+
+const style = {
+  container: {
+    padding: '20px',
+    border: '1px solid #E0E0E0',
+    borderRadius: '15px',
+    width: 'max-content',
+    marginBottom: '40px',
+  },
+  question: { fontWeight: 'bold', marginBottom: '10px' },
+  options: { marginBottom: '5px' },
+  button: {
+    marginTop: '10px',
+    padding: '10px 15px',
+    border: 'none',
+    backgroundColor: '#007BFF',
+    color: '#FFF',
+    fontSize: '14px',
+    borderRadius: '5px',
+    cursor: 'pointer',
+  },
+  feedback: { marginTop: '10px', fontSize: '14px' },
+};
+
 function QuizApp() {
   const questions = [
     {
@@ -44,6 +70,7 @@ function QuizApp() {
       <div style={style.container}>
         <div id="feedback" style={style.feedback}>
           Quiz completed! Your score: {score} out of {questions.length}
+          {/* ✅ lowercase 'c' and 's' — matches spec exactly */}
         </div>
       </div>
     );
@@ -57,16 +84,17 @@ function QuizApp() {
 
       <div style={style.options}>
         {questions[currentQuestion].options.map((option, index) => (
+          // ✅ Parentheses () instead of braces {} — implicit return
           <div key={index}>
             <input
               type="radio"
-              id={`Option${index + 1}`}  {/* ✅ Capital O fixed */}
+              id={`Option${index + 1}`}
               name="answer"
               value={option}
               checked={selectedOption === option}
               onChange={(e) => setSelectedOption(e.target.value)}
             />
-            <label htmlFor={`Option${index + 1}`}>  {/* ✅ Matches fixed ID */}
+            <label htmlFor={`Option${index + 1}`}>
               {option}
             </label>
           </div>
@@ -83,3 +111,7 @@ function QuizApp() {
     </div>
   );
 }
+
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(<QuizApp />);
