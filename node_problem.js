@@ -6,59 +6,56 @@ https.get('https://coderbyte.com/api/challenges/json/json-cleaning', (resp) => {
   resp.on('data', chunk => data += chunk);
 
   resp.on('end', () => {
-    let jsonData;
-    try {
-      jsonData = JSON.parse(data);
-    } catch (e) {
-      console.log("Failed to parse JSON:", e.message);
-      return;
-    }
-
+    let jsonData = JSON.parse(data);
     let removedCount = 0;
 
-    function isInvalid(value) {
-      return value === "" || value === "N/A" || value === "-";
-    }
+    const isInvalid = (val) => {
+      return (
+        typeof val === "string" &&
+        (val.trim() === "" || val.toLowerCase() === "n/a" || val === "-")
+      );
+    };
 
     function clean(obj) {
       if (Array.isArray(obj)) {
-        const result = [];
-        for (const item of obj) {
-          if (isInvalid(item)) {
-            removedCount++;
-          } else {
-            result.push(clean(item));
-          }
-        }
-        return result;
+        let cleanedArr = obj
+          .filter(item => {
+            if (isInvalid(item)) {
+              removedCount++;
+              return false;
+            }
+            return true;
+          })
+          .map(item => clean(item));
+
+        return cleanedArr;
       }
 
-      if (typeof obj === 'object' && obj !== null) {
-        const newObj = {};
-        for (const key in obj) {
-          const value = obj[key];
+      if (typeof obj === "object" && obj !== null) {
+        let newObj = {};
+
+        for (let key in obj) {
+          let value = obj[key];
+
           if (isInvalid(value)) {
             removedCount++;
             continue;
           }
-          const cleaned = clean(value);
-          // Skip if cleaning produced an empty object/array
-          const isEmpty =
-            (Array.isArray(cleaned) && cleaned.length === 0) ||
-            (typeof cleaned === 'object' && cleaned !== null && !Array.isArray(cleaned) && Object.keys(cleaned).length === 0);
 
-          if (!isEmpty) {
-            newObj[key] = cleaned;
-          }
+          let cleanedValue = clean(value);
+
+          newObj[key] = cleanedValue;
         }
+
         return newObj;
       }
 
       return obj;
     }
 
-    const result = clean(jsonData);
-    result.items_removed = removedCount;
+    let result = clean(jsonData);
+    result["items_removed"] = removedCount;
+
     console.log(JSON.stringify(result));
   });
 

@@ -1,0 +1,36 @@
+🔹 React Interview Questions
+What is virtualization in React, and how does it improve performance for large lists?
+Can you explain how the React diffing algorithm (reconciliation) works?
+What are the lifecycle methods in React class components? Can you give real use cases?
+How do you handle a memory leak in React applications? What are common causes?
+What is the difference between useEffect cleanup and component unmounting?
+How does React Fiber architecture improve rendering? (advanced follow-up to diffing)
+How would you optimize rendering for a large-scale React application?
+🔹 Node.js Core & Internals
+What is the difference between setImmediate() and process.nextTick()?
+How does the Node.js event loop work internally?
+What is libuv, and what role does it play in Node.js?
+What are worker threads in Node.js, and when should you use them?
+How do you handle CPU-intensive tasks in Node.js?
+What is clustering in Node.js, and how does it improve scalability?
+What is the difference between cluster module and worker threads?
+🔹 Streaming & Performance
+What are streams in Node.js, and what are their types?
+How does streaming improve performance compared to buffering?
+Can you implement a file streaming example in Node.js?
+What are backpressure and flow control in streams?
+🔹 Database (MongoDB)
+What is an aggregation pipeline in MongoDB?
+Can you explain common stages like $match, $group, $lookup?
+How do you optimize aggregation queries for large datasets?
+What is the difference between aggregation and find queries?
+🔹 System Design / Tools
+When would you use Redis, and what problems does it solve?
+What is Elasticsearch, and how is it different from a database?
+What is RabbitMQ, and how does message queuing work?
+Can you design a system using Redis + RabbitMQ + MongoDB together?
+🔹 TypeScript / Large Scale JS
+In a large-scale JavaScript project, how would you gradually migrate to TypeScript?
+How do you modify or refactor a small piece of code safely in a large codebase?
+What strategies do you use for type safety and maintainability?
+How do you handle breaking changes in a large TypeScript project?
