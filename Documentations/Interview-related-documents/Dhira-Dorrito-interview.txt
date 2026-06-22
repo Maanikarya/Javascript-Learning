@@ -34,3 +34,19 @@ In a large-scale JavaScript project, how would you gradually migrate to TypeScri
 How do you modify or refactor a small piece of code safely in a large codebase?
 What strategies do you use for type safety and maintainability?
 How do you handle breaking changes in a large TypeScript project?
+
+
+===================
+
+
+setImmediate 
+memory leak 
+Streaming
+Worker Thread
+Libuv library
+Agenda
+Mongo DB - aggregation
+How to prevent with DOS attack. 
+An attacker send the request many time then how we will prevent our system
+Ek peice of code ha JS ka bada project hai usme type error aarha hai toh usko kaise resolve karein - convert it into typw script. 
+Redis, Elastic-search,  Rabbit MQ

@@ -1,0 +1,11 @@
+setImmediate 
+memory leak 
+Streaming
+Worker Thread
+Libuv library
+Agenda
+Mongo DB - aggregation
+How to prevent with DOS attack. 
+An attacker send the request many time then how we will prevent our system
+Ek peice of code ha JS ka bada project hai usme type error aarha hai toh usko kaise resolve karein - convert it into typw script. 
+Redis, Elastic-search,  Rabbit MQ
