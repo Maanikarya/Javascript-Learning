@@ -16,52 +16,52 @@ https.get('https://coderbyte.com/api/challenges/json/json-cleaning', (resp) => {
 
     let removedCount = 0;
 
+    function isInvalid(value) {
+      return value === "" || value === "N/A" || value === "-";
+    }
+
     function clean(obj) {
       if (Array.isArray(obj)) {
-        return obj
-          .filter(item => {
-            const invalid = item === "" || item === "N/A" || item === "-";
-            if (invalid) removedCount++;
-            return !invalid;
-          })
-          .map(item => clean(item));
-      }
-
-      else if (typeof obj === 'object' && obj !== null) {
-        let newObj = {};
-
-        for (let key in obj) {
-          let value = obj[key];
-
-          if (value === "" || value === "N/A" || value === "-") {
+        const result = [];
+        for (const item of obj) {
+          if (isInvalid(item)) {
             removedCount++;
           } else {
-            const cleanedValue = clean(value);
-            const isEmpty =
-              (Array.isArray(cleanedValue) && cleanedValue.length === 0) ||
-              (typeof cleanedValue === 'object' &&
-                !Array.isArray(cleanedValue) &&
-                cleanedValue !== null &&
-                Object.keys(cleanedValue).length === 0);
-
-            if (!isEmpty) {
-              newObj[key] = cleanedValue;
-            }
-            // ✅ No longer counting parent removals caused by empty children
+            result.push(clean(item));
           }
         }
+        return result;
+      }
 
+      if (typeof obj === 'object' && obj !== null) {
+        const newObj = {};
+        for (const key in obj) {
+          const value = obj[key];
+          if (isInvalid(value)) {
+            removedCount++;
+            continue;
+          }
+          const cleaned = clean(value);
+          // Skip if cleaning produced an empty object/array
+          const isEmpty =
+            (Array.isArray(cleaned) && cleaned.length === 0) ||
+            (typeof cleaned === 'object' && cleaned !== null && !Array.isArray(cleaned) && Object.keys(cleaned).length === 0);
+
+          if (!isEmpty) {
+            newObj[key] = cleaned;
+          }
+        }
         return newObj;
       }
 
       return obj;
     }
 
-    let result = clean(jsonData);
+    const result = clean(jsonData);
     result.items_removed = removedCount;
     console.log(JSON.stringify(result));
   });
 
-}).on("error", (err) => {
+}).on("error", err => {
   console.log("Error: " + err.message);
 });
