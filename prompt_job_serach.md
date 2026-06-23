@@ -14,8 +14,3 @@ Testing & Performance: Linux Command-Line Basics, AJAX
 Other Skills: Agile/Scrum, Code Reviews, Problem Solving
 
 [UPDATE THE ABOVE PROMPT WITH LINK GIVEN BY AI]
-
-====
-
-
-H/No: 453B, Galino. 33D, Molarband Ext. Badarpur

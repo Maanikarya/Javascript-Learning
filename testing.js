@@ -1,5 +1,12 @@
-let date = new Date();
+const annyArr = [1, 2, 3, 4, 5, 6];
 
-console.log(
-    date.toString()
-);
+annyArr.forEach(function(value){
+    console.log(value);
+    
+});
+
+(
+    function(){
+        console.log("My name is Maanik Arya");
+    }
+)();
